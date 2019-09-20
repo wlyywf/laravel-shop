@@ -1,5 +1,15 @@
 const mix = require('laravel-mix');
 
+//配置忽略node_modules文件夹
+if(Mix.isWatching()){
+    mix.webpackConfig({
+        watchOptions:{
+            ignored : /node_modules/,
+            //poll : 1000
+        },
+    })
+}
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
